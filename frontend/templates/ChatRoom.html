@@ -10,12 +10,12 @@
     <style>
       /* Personalizaciones de estilo */
       .connected-users {
-        height: 100vh; /* Altura completa */
-        overflow-y: auto; /* Desplazamiento vertical */
+        height: 100vh; 
+        overflow-y: auto; 
       }
       .chat-area {
-        height: 100vh; /* Altura completa */
-        overflow-y: auto; /* Desplazamiento vertical */
+        height: 100vh;
+        overflow-y: auto; 
       }
       @media (max-width: 768px) {
         /* Ocultar la columna de usuarios conectados en pantallas pequeñas */
@@ -24,7 +24,7 @@
         }
         /* Estilo para el enlace de regreso */
         #backToUsers {
-          color: #007bff; /* Color azul */
+          color: #007bff; 
           cursor: pointer;
         }
       }
@@ -84,7 +84,7 @@
           </div>
           
           <!-- Texto para volver a usuarios conectados -->
-          <p id="backToUsers"><</p>
+          <p id="backToUsers">Volver a Usuarios Conectados</p>
           
           <!-- Formulario para enviar mensajes -->
           <form id="chat-form">
@@ -97,5 +97,15 @@
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+      document.getElementById('backToUsers').addEventListener('click', function() {
+        // Animación de deslizamiento al área de usuarios conectados
+        document.querySelector('.chat-area').classList.add('slide-out');
+        // Mostrar el área de usuarios conectados después de la animación
+        setTimeout(function() {
+          document.querySelector('.connected-users').style.display = 'block';
+        }, 400); // Duración de la animación en milisegundos
+      });
+    </script>
   </body>
 </html>
